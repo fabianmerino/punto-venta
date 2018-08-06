@@ -1,0 +1,57 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Material Design Icons
+@import "~material-icons/iconfont/material-icons";
+
+// Font Awesome 5 Icons
+@import "~font-awesome-5/scss/fontawesome";
+@import "~font-awesome-5/scss/brands";
+@import "~font-awesome-5/scss/regular";
+@import "~font-awesome-5/scss/solid";
+
+//Icon Line Icons
+@import "~icon-line-pro/style";
+
+//Datatables
+@import "~datatables.net-bs4/css/dataTables.bootstrap4";
+
+//Seetalert2
+@import "~sweetalert2/src/sweetalert2";
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// Box header
+.card-header {
+  position: relative;
+  background-color: transparent;
+  border-bottom: 1px solid $card-border-color;
+
+  @if $enable-rounded {
+    @include border-top-radius($border-radius);
+  }
+
+  .collapsed-card & {
+    border-bottom: none;
+  }
+
+  > .card-tools {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+
+    [data-toggle="tooltip"] {
+      position: relative;
+    }
+  }
+}

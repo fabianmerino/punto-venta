@@ -1,0 +1,1 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.7/dist/sweetalert2.min.js"></script>

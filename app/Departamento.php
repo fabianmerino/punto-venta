@@ -14,6 +14,8 @@ class Departamento extends Model
     
     public $timestamps = false;
     
+    protected $fillable = ['nombre'];
+    
     public function productos(){
         return $this->hasMany(Producto::class);
     }

@@ -7,79 +7,36 @@ use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        $departamentos = Departamento::all();
+        return $departamentos;
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required|unique:departamentos'
+        ]);
+        
+        Departamento::create($request->all());
+        return;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Departamento $departamento)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required|unique:departamentos'
+        ]);
+    
+        Departamento::find($id)->update($request->all());
+        return;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Departamento $departamento)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Departamento $departamento)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Departamento $departamento)
-    {
-        //
+        $departamento = Departamento::findOrFail($id);
+        $departamento->delete();
     }
 }

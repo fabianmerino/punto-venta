@@ -1,10 +1,9 @@
-
-$(document).ready(function() {
+$(document).ready(function () {
     // Incializamos los tooltips y popovers de Bootstrap
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
 
-// Cerrar Popovers al hacer click fuera
+    // Cerrar Popovers al hacer click fuera
     $('.popover-dismiss').popover({
         trigger: 'focus'
     });
@@ -29,4 +28,4 @@ $(document).ready(function() {
             'url': '/vendor/datatables/lang/Spanish.json',
         }
     });
-} );
+});

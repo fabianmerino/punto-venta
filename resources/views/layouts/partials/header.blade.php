@@ -33,7 +33,7 @@
                                 <a class="dropdown-item" href="{{ route('reporte-saldos') }}"><i class="fa fa-address-book"></i> Reporte de Saldos</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown {{ Request::is('productos*') ? 'active' : '' }}">
+                        <li class="nav-item dropdown {{ Request::is('productos*') || Request::is('departments*') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-users"></i> Productos
                             </a>
@@ -44,7 +44,7 @@
                                 {{--<a class="dropdown-item" href="#"><i class="fa fa-edit"></i> Modificar Producto</a>--}}
                                 {{--<a class="dropdown-item" href="#"><i class="fa fa-minus"></i> Eliminar Producto</a>--}}
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-th-list"></i> Departamentos</a>
+                                <a class="dropdown-item" href="{{ route('dep') }}"><i class="fa fa-th-list"></i> Departamentos</a>
                                 <a class="dropdown-item" href="#"><i class="far fa-calendar-alt"></i> Ventas por Periodo</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-gift"></i> Promociones</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-file-import"></i> Importar</a>

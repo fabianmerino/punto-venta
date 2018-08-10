@@ -25,6 +25,10 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/reportes/saldos', 'ClienteController@saldos')->name('reporte-saldos');
     //Rutas para la opción Productos
     Route::resource('productos', 'ProductoController');
+    Route::resource('departamentos', 'DepartamentoController')->except(['create', 'edit']);
+    Route::get('/departments', function () {
+        return view('pages.departamentos.index');
+    })->name('dep');
 });
 
 

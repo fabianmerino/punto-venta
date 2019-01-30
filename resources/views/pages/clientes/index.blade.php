@@ -11,6 +11,9 @@
                 <a class="btn btn-secondary" href="{{ route('clientes.create') }}">
                     <i class="fa fa-plus-circle"></i> Agregar Cliente
                 </a>
+                <a class="btn btn-outline-light" href="{{ route('reporte-saldos') }}">
+                    <i class="far fa-id-badge"></i> Reporte de Saldos
+                </a>
             </div>
         </div>
         <div class="card-body table-responsive-xl">

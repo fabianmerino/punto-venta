@@ -1,17 +1,18 @@
 
 // Body
 $body-bg:       #f5f8fa;
-$primary:       #59287a;
-$secondary:     #00c9a7;
-$success:       #0dd157;
-$info:          #2972fa;
-$warning:       #fab633;
-$danger:        #fb4143;
-$light:         #f6f9fc;
-$dark:          #1b1e24;
+$primary:       #4285F4;//#59287a;
+$secondary:     #aa66cc;//#00c9a7;
+$success:       #00C851;//#0dd157;
+$info:          #33b5e5;//#2972fa;
+$warning:       #ffbb33;//#fab633;
+$danger:        #ff4444;//#fb4143;
+$light:         #e3eaef;//#f6f9fc;
+$dark:          #2E2E2E;//#1b1e24;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Roboto", "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 $material-icons-font-size: 1.28571rem;
+$modal-xl: 1200px !default;

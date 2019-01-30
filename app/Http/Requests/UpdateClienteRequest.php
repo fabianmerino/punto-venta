@@ -34,7 +34,7 @@ class UpdateClienteRequest extends FormRequest
             'email'     => 'nullable|email|max:255',
             'web'       => 'nullable|url|max:100',
             'limite_credito' => 'numeric',
-            'folio'     => 'required|numeric',
+            'folio'     => 'required|numeric|unique:clientes,folio,'.$this->input('folio').',folio,deleted_at,NULL',
         ];
     }
 }

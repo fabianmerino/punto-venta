@@ -29,13 +29,13 @@
                                 {{--<a class="dropdown-item" href="#"><i class="fa fa-user-edit"></i> Modificar Cliente</a>--}}
                                 {{--<a class="dropdown-item" href="#"><i class="fa fa-user-minus"></i> Eliminar Cliente</a>--}}
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-id-card"></i> Estado de Cuenta</a>
+                                {{--<a class="dropdown-item" href="#"><i class="fa fa-id-card"></i> Estado de Cuenta</a>--}}
                                 <a class="dropdown-item" href="{{ route('reporte-saldos') }}"><i class="fa fa-address-book"></i> Reporte de Saldos</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown {{ Request::is('productos*') || Request::is('departments*') ? 'active' : '' }}">
+                        <li class="nav-item dropdown {{ Request::is('productos*') || Request::is('departments*') || Request::is('ventas-periodo*')  || Request::is('promos*') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-users"></i> Productos
+                                <span class="iconify" data-icon="dashicons:products"></span> Productos
                             </a>
                             <div class="dropdown-menu mt-md-2" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('productos.index') }}"><i class="fa fa-book-open"></i> Catálogo</a>
@@ -45,8 +45,8 @@
                                 {{--<a class="dropdown-item" href="#"><i class="fa fa-minus"></i> Eliminar Producto</a>--}}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('dep') }}"><i class="fa fa-th-list"></i> Departamentos</a>
-                                <a class="dropdown-item" href="#"><i class="far fa-calendar-alt"></i> Ventas por Periodo</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-gift"></i> Promociones</a>
+                                <a class="dropdown-item" href="{{ route('ventas-periodo') }}"><i class="far fa-calendar-alt"></i> Ventas por Periodo</a>
+                                <a class="dropdown-item" href="{{ route('promos') }}"><i class="fa fa-gift"></i> Promociones</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-file-import"></i> Importar</a>
                             </div>
                         </li>
@@ -55,12 +55,12 @@
                                 <i class="fa fa-users"></i> Inventario
                             </a>
                             <div class="dropdown-menu mt-md-2" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"><i class="fa fa-plus-circle"></i> Agregar</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Ajustes</a>
+                                <a class="dropdown-item" href="{{ route('inventario.add') }}"><i class="fa fa-plus-circle"></i> Agregar</a>
+                                <a class="dropdown-item" href="{{ route('inventario.adjustment') }}"><i class="fa fa-pencil-alt"></i> Ajustes</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-arrow-alt-circle-down"></i> Productos bajos en Inventario</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-file-archive"></i> Reporte de Inventario</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-file-alt"></i> Reporte de Movimientos</a>
+                                <a class="dropdown-item" href="{{ route('inventario.low') }}"><i class="fa fa-arrow-alt-circle-down"></i> Productos bajos en Inventario</a>
+                                <a class="dropdown-item" href="{{ route('inventario.inventoryReport') }}"><i class="fa fa-file-archive"></i> Reporte de Inventario</a>
+                                <a class="dropdown-item" href="{{ route('inventario.movementReport') }}"><i class="fa fa-file-alt"></i> Reporte de Movimientos</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-book"></i> Kardex de Inventario</a>
                             </div>
                         </li>

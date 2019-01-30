@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Cliente;
 use App\Http\Requests\StoreClienteRequest;
 use App\Http\Requests\UpdateClienteRequest;
-use PhpParser\Node\Stmt\Return_;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ClienteController extends Controller
 {
@@ -36,6 +36,7 @@ class ClienteController extends Controller
      * @param StoreClienteRequest $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(StoreClienteRequest $request)
     {
         $folio = Cliente::all()->max('folio');
@@ -131,5 +132,16 @@ class ClienteController extends Controller
     {
         $clientes = Cliente::all();
         return view('pages.clientes.saldos', compact('clientes'));
+    }
+    /**
+     * Imprime el reporte de saldos de los clientes.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pdfsaldos()
+    {
+        $clientes = Cliente::all();
+        $pdf = PDF::loadView('pages.clientes.pdfsaldos', compact('clientes'))->setPaper('a4', 'landscape');
+        return $pdf->download('listado-saldos.pdf');
     }
 }

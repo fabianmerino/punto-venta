@@ -8,7 +8,7 @@
       <div class="card-header c-card-header text-white bg-primary">
         <h4 class="mb-1">Catálogo de Productos</h4>
         <div class="card-tools">
-          <a class="btn btn-secondary" href="{{ route('clientes.create') }}">
+          <a class="btn btn-secondary" href="{{ route('productos.create') }}">
             <i class="fa fa-plus-circle"></i> Agregar Producto
           </a>
         </div>
@@ -44,10 +44,10 @@
               <td>{{ $producto->dinvminimo }}</td>
               <td>{{ $producto->dinvmaximo }}</td>
               <td class="d-flex justify-content-around">
-                <a class="btn btn-sm btn-outline-info" href="{{ route('clientes.show', ['cliente' => $producto]) }}">
+                <a class="btn btn-sm btn-outline-info" href="{{ route('productos.show', ['producto' => $producto]) }}">
                   <i class="fas fa-eye fa-md"></i>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="{{ route('clientes.edit', ['cliente' => $producto]) }}">
+                <a class="btn btn-sm btn-outline-secondary" href="{{ route('productos.edit', ['producto' => $producto]) }}">
                   <i class="fas fa-edit fa-md"></i>
                 </a>
                 {{ Form::open( array( 'route' => array('clientes.destroy', $producto),'method' => 'DELETE', 'style' => 'display: inline-block; margin-bottom: 0;', 'hidden' )) }}

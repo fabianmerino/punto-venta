@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Caja;
 use App\Departamento;
+use App\Impuesto;
 use App\Medida;
 use App\Producto;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ProductoController extends Controller
 {
@@ -29,7 +32,9 @@ class ProductoController extends Controller
     {
         $departamentos = Departamento::all();
         $medidas = Medida::where('activo', 1)->get(['id', 'unid_enteros', 'unid_fracciones']);
-        return view('pages.productos.create', compact('departamentos', 'medidas'));
+        $productos = Producto::all();
+        $impuestos = Impuesto::all();
+        return view('pages.productos.create', compact('departamentos', 'medidas', 'productos', 'impuestos'));
     }
 
     /**
@@ -86,5 +91,23 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         //
+    }
+    
+    public function ventasPeriodo()
+    {
+        $cajas = Caja::all();
+        return view('pages.productos.ventasxperiodo', compact('cajas'));
+    }
+    
+    public function promos()
+    {
+        return view('pages.productos.promociones');
+    }
+    
+    public function pdf()
+    {
+        $products = Producto::all();
+        $pdf = PDF::loadView('productos.pdf', compact('products'));
+        return $pdf->download('listadoproductos.pdf');
     }
 }

@@ -1,15 +1,8 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+use Illuminate\Support\Facades\Route;
+use App\Departamento;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,12 +16,34 @@ Route::middleware(['auth'])->group(function (){
     //Rutas para la opción Clientes
     Route::resource('clientes', 'ClienteController');
     Route::get('/reportes/saldos', 'ClienteController@saldos')->name('reporte-saldos');
+    Route::get('/reportes/descargar-saldos', 'ClienteController@pdfsaldos')->name('clientes.saldos.pdf');
     //Rutas para la opción Productos
+    Route::resource('productos/departamentos', 'DepartamentoController')->except(['create', 'edit']);
     Route::resource('productos', 'ProductoController');
+    Route::get('descargar-productos', 'ProductoController@pdf')->name('productos.pdf');
     Route::resource('departamentos', 'DepartamentoController')->except(['create', 'edit']);
     Route::get('/departments', function () {
         return view('pages.departamentos.index');
     })->name('dep');
+    Route::get('/ventas-periodo', 'ProductoController@ventasPeriodo')->name('ventas-periodo');
+    Route::get('/promos', 'ProductoController@promos')->name('promos');
+    //Rutas para la opción Inventario
+    Route::get('inventario/add', function () {
+        return view('pages.inventario.add');
+    })->name('inventario.add');
+    Route::get('inventario/adjustment', function () {
+        return view('pages.inventario.adjustment');
+    })->name('inventario.adjustment');
+    Route::get('inventario/lowInventoryProducts', function () {
+        return view('pages.inventario.lowInventory');
+    })->name('inventario.low');
+    Route::get('inventario/InventoryReport', function () {
+        $departamentos = Departamento::all();
+        return view('pages.inventario.inventoryReport', compact('departamentos'));
+    })->name('inventario.inventoryReport');
+    Route::get('inventario/MovementReport', function () {
+        return view('pages.inventario.movementReport');
+    })->name('inventario.movementReport');
 });
 
 

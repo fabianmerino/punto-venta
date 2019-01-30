@@ -32,6 +32,7 @@ class StoreClienteRequest extends FormRequest
             'email'     => 'nullable|email|max:255',
             'web'       => 'nullable|url|max:100',
             'limite_credito' => 'numeric',
+            'folio'     => 'required|unique:clientes,folio',
         ];
     }
 }

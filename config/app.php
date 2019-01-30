@@ -168,6 +168,10 @@ return [
          * SweetAlert Service Providers...
          */
         Softon\SweetAlert\SweetAlertServiceProvider::class,
+        /*
+        * Laravel DomPDF Service Providers...
+        */
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -220,6 +224,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'SWAL' => Softon\SweetAlert\Facades\SWAL::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

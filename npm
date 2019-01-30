@@ -1,0 +1,6 @@
++ i@0.3.6
++ toastr@2.1.4
++ toastr@2.1.4
+added 2 packages from 2 contributors and audited 18974 packages in 13.108s
+found 13 vulnerabilities (11 moderate, 2 high)
+  run `npm audit fix` to fix them, or `npm audit` for details

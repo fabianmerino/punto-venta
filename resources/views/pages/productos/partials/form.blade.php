@@ -4,15 +4,15 @@
             <label class="col-form-label col-sm-4 pt-0">Se vende:</label>
             <div class="form-control form-control-plaintext">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Por Unidad/Pza" checked>
                     <label class="form-check-label" for="inlineRadio1">Por Unidad/Pza</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="A Granel/Kg">
                     <label class="form-check-label" for="inlineRadio2">A granel/Kg</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="En Kit">
                     <label class="form-check-label" for="inlineRadio3">En Kit</label>
                 </div>
             </div>
@@ -41,17 +41,24 @@
 <div class="form-row">
     <div class="form-group col-sm-4">
         {{ Form::label('departamento', 'Departamento') }}
-        <select name="departamento" id="departamento" class="form-control form-control-sm">
-            @if(isset($producto->departamento->id))
-                @foreach($departamentos as $departamento)
-                    <option value="{{ $embalaje->id }}" {{ $producto->medida->id == $medida->id ? 'selected' : ''}}>{{ $embalaje->nombre }}</option>
-                @endforeach
-            @else
-                @foreach($departamentos as $departamento)
-                    <option value="{{ $departamento->id }}">{{ $departamento->nombre }}</option>
-                @endforeach
-            @endif
-        </select>
+        <div class="input-group input-group-sm">
+            <select name="departamento" id="departamento" class="form-control form-control-sm">
+                @if(isset($producto->departamento->id))
+                    @foreach($departamentos as $departamento)
+                        <option value="{{ $embalaje->id }}" {{ $producto->medida->id == $medida->id ? 'selected' : ''}}>{{ $embalaje->nombre }}</option>
+                    @endforeach
+                @else
+                    @foreach($departamentos as $departamento)
+                        <option value="{{ $departamento->id }}">{{ $departamento->nombre }}</option>
+                    @endforeach
+                @endif
+            </select>
+            <div class="input-group-append">
+                <a href="#departamentoModal" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#departamentoModal">
+                    <i class="fa fa-plus fa-circle-notch"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="form-group col-sm-4">
         {{ Form::label('medida', 'Unidad de Medida') }}
@@ -69,8 +76,8 @@
 </div>
 <fieldset id="fieldInventario" disabled>
     <div class="form-row">
-        {{ Form::formInput('dinventario', 'Hay en inventario', 'col-sm-4') }}
-        {{ Form::formInput('dinvminimo', 'Stock Mínimo', 'col-sm-4') }}
-        {{ Form::formInput('dinvmaximo', 'Stock Máximo', 'col-sm-4') }}
+        {{ Form::formInput('dinventario', 'Hay en inventario', 'col-sm-4', false, '', '', 'number') }}
+        {{ Form::formInput('dinvminimo', 'Stock Mínimo', 'col-sm-4',false, '', '', 'number') }}
+        {{ Form::formInput('dinvmaximo', 'Stock Máximo', 'col-sm-4',false, '', '', 'number') }}
     </div>
 </fieldset>

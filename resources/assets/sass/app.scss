@@ -12,19 +12,25 @@
 @import "~material-icons/iconfont/material-icons";
 
 // Font Awesome 5 Icons
-@import "~font-awesome-5/scss/fontawesome";
-@import "~font-awesome-5/scss/brands";
-@import "~font-awesome-5/scss/regular";
-@import "~font-awesome-5/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
 
 //Icon Line Icons
-@import "~icon-line-pro/style";
+//@import "~icon-line-pro/style";
 
 //Datatables
 @import "~datatables.net-bs4/css/dataTables.bootstrap4";
 
 //Seetalert2
 @import "~sweetalert2/src/sweetalert2";
+
+//toastr
+@import "~toastr/toastr";
+
+//VCalendar
+@import '~vue2-daterange-picker/dist/lib/vue-daterange-picker.min.css';
 
 .navbar-laravel {
   background-color: #fff;
@@ -55,3 +61,6 @@
     }
   }
 }
+
+//Modal XL
+.modal-xl{ max-width: $modal-xl; }

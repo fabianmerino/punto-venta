@@ -19,26 +19,25 @@
 </head>
 <body>
     <div id="app">
-        <div class="wrapper">
-            
+        @section('header')
             @include('layouts.partials.header')
-        
+        @show
+    
 
-            <main class="py-4">
-                @yield('content')
-            </main>
-            {{--<footer class="bg-dark py-3" role="footer">--}}
-                {{--<div class="container-fluid">--}}
-                    {{--<div class="d-flex justify-content-center">--}}
-                        {{--<!-- Footer Copyrights -->--}}
-                        {{--<div class="text-center text-md-right">--}}
-                            {{--<small class="text-white">&copy; 2018 {{ config('app.name', 'Laravel') }}. Todos los derechos reservados.</small>--}}
-                        {{--</div>--}}
-                        {{--<!-- End Footer Copyrights -->--}}
+        <main class="py-4">
+            @yield('content')
+        </main>
+        {{--<footer class="bg-dark py-3" role="footer">--}}
+            {{--<div class="container-fluid">--}}
+                {{--<div class="d-flex justify-content-center">--}}
+                    {{--<!-- Footer Copyrights -->--}}
+                    {{--<div class="text-center text-md-right">--}}
+                        {{--<small class="text-white">&copy; 2018 {{ config('app.name', 'Laravel') }}. Todos los derechos reservados.</small>--}}
                     {{--</div>--}}
+                    {{--<!-- End Footer Copyrights -->--}}
                 {{--</div>--}}
-            {{--</footer>--}}
-        </div>
+            {{--</div>--}}
+        {{--</footer>--}}
     </div>
     @section('scripts')
         @include('layouts.partials.scripts')

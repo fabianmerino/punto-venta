@@ -38,9 +38,10 @@
                         <table class="table table-sm table-hover" id="tablaMesEstCta">
                             <thead class="text-white-50 bg-primary">
                                 <tr>
-                                    <th>Mes de calendario</th>
+                                    <th scope="col">Mes de calendario</th>
                                 </tr>
                             </thead>
+                            <tbody></tbody>
                         </table>
                     
                     </div>
@@ -48,10 +49,10 @@
                         <table class="table table-sm table-bordered table-hover" id="tablaEstadoCuenta">
                             <thead class="text-white-50 bg-primary">
                                 <tr class="text-center">
-                                    <th>Descripción del producto</th>
-                                    <th>Precio de venta</th>
-                                    <th>Cantidad</th>
-                                    <th>Importe</th>
+                                    <th scope="col">Descripción del producto</th>
+                                    <th scope="col">Precio de venta</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Importe</th>
                                 </tr>
                             </thead>
                             <tbody>

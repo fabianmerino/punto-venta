@@ -15,6 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('role_id');
             $table->string('nombre_completo');
             $table->string('direccion')->nullable();
             $table->string('telefono', 50)->nullable();
@@ -26,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->foreign('caja_id')->references('id')->on('cajas');
         });
     }

@@ -8,7 +8,7 @@
         <div class="card-header text-white bg-primary">
             <h4 class="mb-1">Crédito a Clientes - REPORTE DE SALDOS</h4>
             <div class="card-tools">
-                <a class="btn btn-info" href="{{ route('clientes.create') }}">
+                <a class="btn btn-light" href="{{ route('clientes.saldos.pdf') }}">
                     <i class="fa fa-print"></i> Imprimir reporte
                 </a>
             </div>

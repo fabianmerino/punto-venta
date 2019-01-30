@@ -31,4 +31,8 @@ class User extends Authenticatable
         return $this->belongsTo(Caja::class);
     }
     
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

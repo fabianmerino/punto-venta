@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Incializamos los tooltips y popovers de Bootstrap
+    // Inicializamos los tooltips y popovers de Bootstrap
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
 
@@ -8,21 +8,21 @@ $(document).ready(function () {
         trigger: 'focus'
     });
 
-    //Inciializamos Datatable de Saldos
+    //Inicializamos DataTable de Saldos
     $('#tablaSaldos').DataTable({
         'language': {
             'url': '/vendor/datatables/lang/Spanish.json',
         }
     });
 
-    //Inciializamos Datatable de Clientes
+    //Inicializamos DataTable de Clientes
     $('#tablaClientes').DataTable({
         'language': {
             'url': '/vendor/datatables/lang/Spanish.json',
         }
     });
 
-    //Inciializamos Datatable de Productos
+    //Inicializamos DataTable de Productos
     $('#tablaProductos').DataTable({
         'language': {
             'url': '/vendor/datatables/lang/Spanish.json',

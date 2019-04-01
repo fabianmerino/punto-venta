@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name', 'Fabian Merino') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                         </li>
                         <li class="nav-item dropdown {{ Request::is('productos*') || Request::is('departments*') || Request::is('ventas-periodo*')  || Request::is('promos*') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="iconify" data-icon="dashicons:products"></span> Productos
+                                <i class="fa fa-shopping-bag"></i> Productos
                             </a>
                             <div class="dropdown-menu mt-md-2" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('productos.index') }}"><i class="fa fa-book-open"></i> Catálogo</a>
@@ -52,7 +52,7 @@
                         </li>
                         <li class="nav-item dropdown {{ Request::is('inventario*') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-users"></i> Inventario
+                                <i class="fa fa-chart-area"></i> Inventario
                             </a>
                             <div class="dropdown-menu mt-md-2" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('inventario.add') }}"><i class="fa fa-plus-circle"></i> Agregar</a>
@@ -61,7 +61,7 @@
                                 <a class="dropdown-item" href="{{ route('inventario.low') }}"><i class="fa fa-arrow-alt-circle-down"></i> Productos bajos en Inventario</a>
                                 <a class="dropdown-item" href="{{ route('inventario.inventoryReport') }}"><i class="fa fa-file-archive"></i> Reporte de Inventario</a>
                                 <a class="dropdown-item" href="{{ route('inventario.movementReport') }}"><i class="fa fa-file-alt"></i> Reporte de Movimientos</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-book"></i> Kardex de Inventario</a>
+                                <a class="dropdown-item" href="{{ route('inventario.kardex') }}"><i class="fa fa-book"></i> Kardex de Inventario</a>
                             </div>
                         </li>
                     </ul>

@@ -37,13 +37,17 @@ Route::middleware(['auth'])->group(function (){
     Route::get('inventario/lowInventoryProducts', function () {
         return view('pages.inventario.lowInventory');
     })->name('inventario.low');
-    Route::get('inventario/InventoryReport', function () {
+    Route::get('inventario/inventoryReport', function () {
         $departamentos = Departamento::all();
         return view('pages.inventario.inventoryReport', compact('departamentos'));
     })->name('inventario.inventoryReport');
-    Route::get('inventario/MovementReport', function () {
-        return view('pages.inventario.movementReport');
+    Route::get('inventario/movementReport', function () {
+        $cajas = \App\Caja::all();
+        return view('pages.inventario.movementReport', compact('cajas'));
     })->name('inventario.movementReport');
+    Route::get('inventario/kardex', function () {
+        return view('pages.inventario.kardex');
+    })->name('inventario.kardex');
 });
 
 

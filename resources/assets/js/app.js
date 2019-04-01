@@ -28,6 +28,7 @@ Vue.component('adjustment-inventory-component', require('./components/Inventario
 Vue.component('low-inventory-products-component', require('./components/Inventario/LowInventoryProductsComponent'));
 Vue.component('inventory-report-component', require('./components/Inventario/InventoryReportComponent'));
 Vue.component('movement-report-component', require('./components/Inventario/MovementReportComponent'));
+Vue.component('kardex-component', require('./components/Inventario/KardexComponent'));
 
 const app = new Vue({
     el: '#app',

@@ -1,6 +1,5 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="https://code.iconify.design/1/1.0.0-rc6/iconify.min.js"></script>
 
 @include('vendor.sweetalert.cdn')
 @include('vendor.sweetalert.view')

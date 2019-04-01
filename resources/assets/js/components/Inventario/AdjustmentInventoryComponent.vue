@@ -25,13 +25,13 @@
                         <div class="form-group row">
                             <label for="description" class="col-form-label col-sm-4 text-sm-right">Descripción</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control-plaintext font-weight-bold text-info h5" id="description" :value="desc" readonly>
+                                <label id="description" class="form-control-plaintext font-weight-bold text-info h5">{{desc}}</label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="stock" class="col-form-label col-sm-4 text-sm-right">Cantidad Actual</label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control-plaintext font-weight-bold text-info h5" id="stock" :value="stock" readonly>
+                                <label class="form-control-plaintext font-weight-bold text-info h5" id="stock" >{{stock}}</label>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-8 offset-sm-4">
-                                <button class="btn btn-outline-info" type="submit">
+                                <button class="btn btn-info" type="submit">
                                     <i class="fa fa-edit"></i> Realizar ajuste de Inventario
                                 </button>
                             </div>

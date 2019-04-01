@@ -10,27 +10,27 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.3",
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "axios": "^0.18",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "cross-env": "^5.1",
     "jquery": "^3.2",
     "laravel-mix": "^2.1.14",
     "lodash": "^4.17.11",
-    "popper.js": "^1.14.6",
-    "vue": "^2.5.22"
+    "popper.js": "^1.14.7",
+    "vue": "^2.6.10"
   },
   "dependencies": {
-    "@fancyapps/fancybox": "^3.5.6",
-    "@fortawesome/vue-fontawesome": "^0.1.5",
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "adminbsb-materialdesign": "^1.0.7",
     "appear": "^1.0.1",
-    "bootstrap-select": "^1.13.5",
+    "bootstrap-select": "^1.13.9",
     "chartist": "^0.11.0",
     "chartist-plugin-tooltips": "0.0.17",
     "datatables.net": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
-    "flatpickr": "^4.5.2",
+    "flatpickr": "^4.5.7",
     "i": "^0.3.6",
     "jquery-mousewheel": "^3.1.13",
     "jquery-ui": "^1.12.1",
@@ -41,7 +41,8 @@
     "sweetalert2": "^7.33.1",
     "toastr": "^2.1.4",
     "v-calendar": "^0.9.7",
-    "vue-template-compiler": "^2.5.22",
+    "vue-router": "^3.0.2",
+    "vue-template-compiler": "^2.6.10",
     "vue2-daterange-picker": "^0.1.6",
     "vuejs-datepicker": "^1.5.4"
   }
